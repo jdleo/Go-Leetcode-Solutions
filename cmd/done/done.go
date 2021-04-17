@@ -38,10 +38,8 @@ func main() {
 	// get current problems solved
 	out, err2 := exec.Command("ls", "-l", "./solutions").Output()
 
+	// get count of solved problems
 	count := strings.Count(string(out), "\n")
-	if count == 0 {
-		return
-	}
 
 	// validate
 	if err2 != nil {
