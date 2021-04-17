@@ -1,7 +1,7 @@
 package main
 
 func shuffle(nums []int, n int) []int {
-	res := make([]int, len(nums))
+	res := append([]int{}, nums...)
 
 	for i := 0; i < n; i++ {
 		res[2*i] = nums[i]
