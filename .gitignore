@@ -2,5 +2,9 @@
 done
 new
 
+# not source for those^
+!cmd/done
+!cmd/new
+
 # mac
 .DS_Store
