@@ -15,9 +15,8 @@ To start a new problem:
 
 To mark a problem as complete:	
 ``` 
-
 ./done <problem id>
 ``` 
 
 
-### # Of Problems Solved: 1
+### # Of Problems Solved: 2
