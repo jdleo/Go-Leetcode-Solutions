@@ -65,7 +65,6 @@ To start a new problem:
 
 To mark a problem as complete:	
 %s 
-
 ./done <problem id>
 %s 
 
@@ -79,5 +78,5 @@ To mark a problem as complete:
 	// stage + commit new code
 	exec.Command("git", "add", path).Run()
 	exec.Command("git", "add", "README.md").Run()
-	exec.Command("git", "commit", "-m", fmt.Sprintf("\"completed problem %s\"", problemId)).Run()
+	exec.Command("git", "commit", "-m", fmt.Sprintf("completed problem %s", problemId)).Run()
 }
