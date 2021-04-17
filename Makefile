@@ -1,2 +1,2 @@
-build:
-		for file in ./cmd/*; do go build $$file; done;
+init:
+	git init && for file in ./cmd/*; do go build $$file; done;
