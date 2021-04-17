@@ -1,8 +1,9 @@
 package main
 
 func runningSum(nums []int) []int {
+	res := nums[:]
 	for i := 1; i < len(nums); i++ {
-		nums[i] += nums[i-1]
+		res[i] += res[i-1]
 	}
-	return nums
+	return res
 }
