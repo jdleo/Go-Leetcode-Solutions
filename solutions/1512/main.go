@@ -1,16 +1,12 @@
 package main
 
 func numIdenticalPairs(nums []int) int {
-	hm := map[int]int{}
+	counts := make([]int, 101)
 	res := 0
 
 	for _, num := range nums {
-		if val, ok := hm[num]; ok {
-			res += val
-			hm[num]++
-		} else {
-			hm[num] = 1
-		}
+		res += counts[num]
+		counts[num]++
 	}
 
 	return res

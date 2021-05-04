@@ -12,6 +12,5 @@ func maximumWealth(accounts [][]int) int {
 			res = sum
 		}
 	}
-
 	return res
 }

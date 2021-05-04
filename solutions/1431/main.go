@@ -1,17 +1,17 @@
 package main
 
 func kidsWithCandies(candies []int, extraCandies int) []bool {
-	res := make([]bool, len(candies))
+	res := []bool{}
 	max := 0
 
-	for _, candy := range candies {
-		if candy > max {
-			max = candy
+	for _, c := range candies {
+		if c > max {
+			max = c
 		}
 	}
 
-	for i := 0; i < len(candies); i++ {
-		res[i] = candies[i]+extraCandies >= max
+	for _, c := range candies {
+		res = append(res, c+extraCandies >= max)
 	}
 
 	return res
