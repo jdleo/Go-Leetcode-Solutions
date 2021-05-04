@@ -41,5 +41,5 @@ func main() {
 
 	// stage + commit new code
 	exec.Command("git", "add", "-A").Run()
-	exec.Command("git", "commit", "-m", fmt.Sprintf("\"create problem %s\"", problemId)).Run()
+	exec.Command("git", "commit", "-m", fmt.Sprintf("create problem %s", problemId)).Run()
 }
