@@ -12,10 +12,19 @@ func minPathSum(grid [][]int) int {
 	// go thru rest of grid
 	for i := 1; i < len(grid); i++ {
 		for j := 1; j < len(grid[0]); j++ {
-
+			// take minimum of coming from top or left
+			grid[i][j] += min(grid[i-1][j], grid[i][j-1])
 		}
 	}
 
 	// result is in last cell
 	return grid[len(grid)-1][len(grid[0])-1]
+}
+
+func min(a int, b int) int {
+	if a < b {
+		return a
+	} else {
+		return b
+	}
 }
