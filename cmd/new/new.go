@@ -1,9 +1,12 @@
 package main
 
 import (
+	"errors"
 	"fmt"
+	"log"
 	"os"
 	"os/exec"
+	"strings"
 )
 
 func main() {
@@ -12,12 +15,26 @@ func main() {
 
 	// validate
 	if len(args) != 1 {
-		fmt.Println("err: usage: ./new <problem id>")
-		return
+		log.Panic(errors.New("usage: ./new <problem id>"))
 	}
 
 	// get problem id
 	problemId := args[0]
+
+	// list solutions
+	out, err := exec.Command("ls", "./solutions").Output()
+
+	if err != nil {
+		log.Panic(err)
+	}
+
+	// go thru each file
+	for _, str := range strings.Split(string(out), "\n") {
+		// check if this problem already exists
+		if str == problemId {
+			log.Panic(errors.New("problem already exists"))
+		}
+	}
 
 	// create new folder under /solutions for this file
 	exec.Command("mkdir", "-p", "./solutions/"+problemId).Run()
@@ -30,8 +47,7 @@ func main() {
 
 	// validate
 	if err != nil {
-		fmt.Println(err.Error())
-		return
+		log.Panic(err)
 	}
 
 	defer f.Close()
