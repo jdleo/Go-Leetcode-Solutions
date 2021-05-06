@@ -19,4 +19,4 @@ To mark a problem as complete:
 ``` 
 
 
-### # Of Problems Solved: 56
+### # Of Problems Solved: 57
