@@ -13,7 +13,7 @@ func lowestCommonAncestor(p *Node, q *Node) *Node {
 	root := getRoot(p)
 	// parent mapping and queue for bfs
 	parent := map[*Node]*Node{}
-	queue := []*Node{}
+	queue := []*Node{root}
 
 	// go while queue isnt empty
 	for len(queue) > 0 {
