@@ -8,10 +8,10 @@ func sumOfUnique(nums []int) int {
 		counts[num]++
 	}
 
-	// go thru counts, and count those unique
-	for _, count := range counts {
+	// go thru counts, and sum the unique ones
+	for num, count := range counts {
 		if count == 1 {
-			res++
+			res += num
 		}
 	}
 
