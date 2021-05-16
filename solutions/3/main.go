@@ -8,16 +8,16 @@ func lengthOfLongestSubstring(s string) int {
 
 	// go through string with start, end pointers
 	for start, end := 0, 0; end < len(s); end++ {
-		// keep removing from seen, and moving start forward
-		// as so long as we've already seen this char
+		// keep removing from seen, as so long as we've already
+		// seen this character (no repeated characters)
 		for seen[s[end]] {
 			delete(seen, s[start])
 			start++
 		}
 
-		// ok, now we can add character at end pointer
+		// now we can add the character at the end pointer
 		seen[s[end]] = true
-		// set new max length
+		// calculate new longest substring (at this point, we know no repeating)
 		if end-start+1 > res {
 			res = end - start + 1
 		}
