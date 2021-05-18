@@ -2,6 +2,11 @@ package main
 
 import "sort"
 
+type point struct {
+	time    int
+	isStart bool
+}
+
 func minMeetingRooms(intervals [][]int) int {
 	var points []point
 	for _, interval := range intervals {
