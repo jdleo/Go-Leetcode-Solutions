@@ -8,7 +8,7 @@ type TreeNode struct {
 }
 
 func isBalanced(root *TreeNode) bool {
-	var res bool
+	res := true
 	maxDepth(root, &res)
 	return res
 }
